@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html>
+<body>
+    <h3>Rental Bike Share Prediction</h3>
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+    
+       <label for="season">Season</label>
+    <select id="season" name="season">
+      <option value="1">Spring</option>
+      <option value="2">Summer</option>
+       <option value="3">Fall</option>
+      <option value="4">Winter</option>
+       </select>
+    <br>
+    <br> 
+    
+    <label for="day">Day</label>
+    <select id="day" name="day">
+      <option value="1">1</option>
+      <option value="2">2</option>
+       <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+     <option value="7">7</option>
+    <option value="8">8</option>
+     <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+     <option value="22">22</option>
+      <option value="23">23</option> 
+      <option value="24">24</option>
+       <option value="25">25</option>
+        <option value="26">26</option>
+         <option value="27">27</option>
+         
+         <option value="28">28</option>
+        <option value="29">29</option>
+         <option value="30">30</option>
+         <option value="31">31</option>
+       </select>
+    <br>
+    <br>
+
+    
+    <label for="month">Month</label>
+    <select id="month" name="month">
+      <option value="1">1</option>
+      <option value="2">2</option>
+       <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+     <option value="7">7</option>
+    <option value="8">8</option>
+     <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+      </select>
+    <br>
+    <br>
+    
+    
+     <label for="year">Year </label>
+    <input type="float" id="year" name="year">btw:[9999]
+    <br>
+    <br>
+    
+       <label for="hr">Hour </label>
+    <input type="float" id="hr" name="hr">btw:[1-24]
+    <br>
+    <br>
+    
+    
+   <label for="holiday">Holiday</label>
+    <select id="holiday" name="holiday">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+       
+       </select>
+    <br>
+    <br>
+    
+    <label for="weekday">Weekday</label>
+    <select id="weekday" name="weekday">
+      <option value="0">Sunday</option>
+      <option value="1">Monday</option>
+       <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thrusday</option>
+       <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+       </select>
+    <br>
+    <br>
+    
+    <label for="good_weather">Good_Weather</label>
+    <select id="good_weather" name="good_weather">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+       
+       </select>
+       
+        <br>
+    <br>
+       
+       <label for="weekend">weekend</label>
+    <select id="weekend" name="weekend">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+       
+       </select>
+    
+     <br>
+     <br>
+    
+    	
+
+     <label for="workingday">Workingday</label>
+    <select id="workingday" name="workingday">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+       </select>
+    <br>
+    <br>
+    
+    
+     <label for="weathersit">Weathersit</label>
+    <select id="weathersit" name="weathersit">
+      <option value="1">Clear</option>
+      <option value="2">Misty+Cloudy</option>
+      <option value="3">Light Snow/Rain</option>
+      <option value="4">Heavy Snow/Rain</option>
+       </select>
+    <br>
+    <br>
+      
+    
+     
+     
+    <br>
+    <br>
+    
+    
+        <label for="atemp">atemp </label>
+    <input type="float" id="atemp" name="atemp">btw:[0.0000 - 1.0000]
+    <br> 
+     <br>
+     
+           <label for="hum">Humidity </label>
+    <input type="float" id="hum" name="hum">btw:[0.00 - 9.99]
+    <br> 
+    <br>
+         <label for="windspeed">Windspeed </label>
+    <input type="float" id="windspeed" name="windspeed">btw:[0.0000 - 9.9999]
+    <br> 
+    <br>
+    
+     
+       <label for="casual">Casual </label>
+    <input type="float" id="casual" name="casual">btw:[1 - 9999]
+    <br> 
+    <br>
+     
+        <label for="registered">No of Bike Registered </label>
+    <input type="float" id="registered" name="registered">btw:[1 - 999]
+    <br> 
+    <br>
+     
+     
+    
+    
+    <label for="peak_hour">peak_hour</label>
+    <select id="peak_hour" name="peak_hour">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+       </select>
+    <br> 
+    <br>
+    
+        <label for="temp">Temperature </label>
+    <input type="float" id="temp" name="temp">btw:[0.00 - 1.00]
+    <br> 
+    <br>
+    
+         <label for="afternoon">afternoon</label>
+    <select id="afternoon" name="afternoon">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+       </select>
+    <br> 
+    <br>
+    
+    
+   <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
