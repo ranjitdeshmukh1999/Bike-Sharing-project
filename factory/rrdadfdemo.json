@@ -1,0 +1,9 @@
+{
+	"name": "rrdadfdemo",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7b1f4561-2424-41f9-9844-be74413c0956",
+		"tenantId": "509d05f0-aad6-4eaf-bb5a-300397923412"
+	}
+}
